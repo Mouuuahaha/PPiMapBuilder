@@ -34,8 +34,7 @@ public class PMBQueryInteractionTask extends AbstractTask {
 		for (PsicquicService service : selectedDatabases) {
 			try {
 				// System.out.println(service.toString());
-				System.out.println("----- >>> " + service.getName()
-					+ "----------------------");
+				//System.out.println("----- >>> " + service.getName()+ "----------------------");
 				PsicquicSimpleClient client = new PsicquicSimpleClient(
 					service.getRestUrl());
 				PsimiTabReader mitabReader = new PsimiTabReader();
@@ -47,8 +46,8 @@ public class PMBQueryInteractionTask extends AbstractTask {
 				/* else */
 				interactionResults.addAll(mitabReader.read(result));
 
-				System.out.println("Interactions found: " + interactionResults.size());
-				System.out.println("---------------------------------------");
+				//System.out.println("Interactions found: " + interactionResults.size());
+				//System.out.println("---------------------------------------");
 			} catch (IOException t) {
 				System.err.println("Interaction query failed on: " + service.getName());
 			} catch (PsimiTabException t) {
