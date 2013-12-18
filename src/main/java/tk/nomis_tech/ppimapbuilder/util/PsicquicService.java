@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  *
- * @author Kévin Gravouil
+ * @author Kevin Gravouil
  */
 public class PsicquicService {
 

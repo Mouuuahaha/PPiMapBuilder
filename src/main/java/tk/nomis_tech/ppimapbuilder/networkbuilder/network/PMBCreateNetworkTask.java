@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collection;
 import java.util.HashMap;
+
+import org.apache.axis2.AxisFault;
 import org.cytoscape.model.CyNetwork;
 import org.cytoscape.model.CyNetworkFactory;
 import org.cytoscape.model.CyNetworkManager;
@@ -22,6 +24,7 @@ import org.cytoscape.view.vizmap.VisualStyle;
 import org.cytoscape.work.AbstractTask;
 import org.cytoscape.work.TaskMonitor;
 import org.hupo.psi.mi.psicquic.wsclient.PsicquicSimpleClient;
+
 import psidev.psi.mi.tab.PsimiTabException;
 import psidev.psi.mi.tab.PsimiTabReader;
 import psidev.psi.mi.tab.model.BinaryInteraction;
@@ -204,10 +207,11 @@ public class PMBCreateNetworkTask extends AbstractTask {
 		}*/
 		
 		// eInfo utility returns a list of available databases
-		//EUtilsServiceStub service = new EUtilsServiceStub();
-        /*try
+		try
         {
+			System.out.println("#1");
             EUtilsServiceStub service = new EUtilsServiceStub();
+            System.out.println("#2");
            
             // call NCBI EInfo utility
             EUtilsServiceStub.EInfoRequest req = new EUtilsServiceStub.EInfoRequest();
@@ -218,7 +222,7 @@ public class PMBCreateNetworkTask extends AbstractTask {
                 System.out.println(res.getDbList().getDbName()[i]);
             }
         }
-        catch(Exception e) { System.out.println(e.toString()); }*/
+        catch(Exception e) { System.out.println(e.toString()); }
 	}
 
 }
