@@ -1,13 +1,10 @@
 package tk.nomis_tech.ppimapbuilder.networkbuilder.network;
 
-import gov.nih.nlm.ncbi.www.soap.eutils.EUtilsServiceStub;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collection;
 import java.util.HashMap;
 
-import org.apache.axis2.AxisFault;
 import org.cytoscape.model.CyNetwork;
 import org.cytoscape.model.CyNetworkFactory;
 import org.cytoscape.model.CyNetworkManager;
@@ -28,9 +25,6 @@ import org.hupo.psi.mi.psicquic.wsclient.PsicquicSimpleClient;
 import psidev.psi.mi.tab.PsimiTabException;
 import psidev.psi.mi.tab.PsimiTabReader;
 import psidev.psi.mi.tab.model.BinaryInteraction;
-import uk.ac.ebi.kraken.interfaces.uniprot.UniProtEntry;
-import uk.ac.ebi.kraken.uuw.services.remoting.EntryRetrievalService;
-import uk.ac.ebi.kraken.uuw.services.remoting.UniProtJAPI;
 
 
 public class PMBCreateNetworkTask extends AbstractTask {
@@ -74,14 +68,6 @@ public class PMBCreateNetworkTask extends AbstractTask {
 
 	@Override
 	public void run(TaskMonitor taskMonitor) {
-		/*System.out.println("---");
-		System.out.println("Get information from Uniprot...");
-		EntryRetrievalService entryRetrievalService = UniProtJAPI.factory.getEntryRetrievalService();
-		UniProtEntry entry = (UniProtEntry) entryRetrievalService.getUniProtEntry("P04040");
-		if (entry != null) {
-			System.out.println(entry.toString());
-		}
-		System.out.println("---");*/
 		
 		if (!interactionResults.isEmpty()) {
 			createNetworkFromBinaryInteractions(interactionResults);
@@ -199,15 +185,10 @@ public class PMBCreateNetworkTask extends AbstractTask {
 	}
 	
 	public static void main(String[] args) {
-		/*System.out.println("Get information from Uniprot...");
-		EntryRetrievalService entryRetrievalService = UniProtJAPI.factory.getEntryRetrievalService();
-		UniProtEntry entry = (UniProtEntry) entryRetrievalService.getUniProtEntry("P04040");
-		if (entry != null) {
-			System.out.println(entry.toString());
-		}*/
+		
 		
 		// eInfo utility returns a list of available databases
-		try
+		/*try
         {
 			System.out.println("#1");
             EUtilsServiceStub service = new EUtilsServiceStub();
@@ -222,7 +203,7 @@ public class PMBCreateNetworkTask extends AbstractTask {
                 System.out.println(res.getDbList().getDbName()[i]);
             }
         }
-        catch(Exception e) { System.out.println(e.toString()); }
+        catch(Exception e) { System.out.println(e.toString()); }*/
 	}
 
 }

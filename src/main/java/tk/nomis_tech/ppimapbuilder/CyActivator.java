@@ -1,21 +1,21 @@
 package tk.nomis_tech.ppimapbuilder;
 
+import java.util.Properties;
+
 import org.cytoscape.model.CyNetworkFactory;
 import org.cytoscape.model.CyNetworkManager;
 import org.cytoscape.service.util.AbstractCyActivator;
 import org.cytoscape.session.CyNetworkNaming;
+import org.cytoscape.view.layout.CyLayoutAlgorithmManager;
 import org.cytoscape.view.model.CyNetworkViewFactory;
 import org.cytoscape.view.model.CyNetworkViewManager;
 import org.cytoscape.view.vizmap.VisualMappingManager;
 import org.cytoscape.work.TaskFactory;
 import org.cytoscape.work.TaskManager;
 import org.osgi.framework.BundleContext;
-import org.cytoscape.view.layout.CyLayoutAlgorithmManager;
 
 import tk.nomis_tech.ppimapbuilder.networkbuilder.PMBInteractionNetworkBuildTaskFactory;
 import tk.nomis_tech.ppimapbuilder.ui.QueryWindow;
-
-import java.util.Properties;
 
 /**
  * The starting point of the plug-in
@@ -33,6 +33,7 @@ public class CyActivator extends AbstractCyActivator {
 	 */
 	public void start(BundleContext bc) {
 		context = bc;
+		System.out.println("Starting PPiMapBuilder...");
 //
 //		//QueryWindow
 		QueryWindow queryWindow = new QueryWindow();
